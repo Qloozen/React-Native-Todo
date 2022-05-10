@@ -36,13 +36,16 @@ const Home = () => {
                 renderItem={({ item }) => (
                     <TodoItem todo={item} />
                 )}
+                style={styles.todoList}
             />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-
+    todoList: {
+        marginTop: 20
+    }
 })
 
 export default Home;
