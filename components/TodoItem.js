@@ -2,11 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const TodoItem = ({ todo }) => {
-    console.log(todo)
     return (
         <View style={styles.card}>
             <View style={styles.content}>
-                <Text style={styles.text}>{todo.naam}</Text>
+                <Text style={styles.text}>{todo.name}</Text>
             </View>
         </View>
     );
