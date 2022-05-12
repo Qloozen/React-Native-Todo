@@ -28,7 +28,6 @@ const CreateToDo = ({ route }) => {
                 initialValues={{ key: uuid.v4(), name: "", description: "", priority: "" }}
                 validationSchema={validationSchema}
                 onSubmit={(values) => {
-                    console.log(values)
                     handler(values)
                 }}
             >
