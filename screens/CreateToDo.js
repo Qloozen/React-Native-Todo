@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { Formik } from "formik";
 import { globalStyles } from '../styles/global';
 import * as yup from "yup";
+import uuid from 'react-native-uuid';
 
 const validationSchema = yup.object().shape({
     name: yup
@@ -24,9 +25,10 @@ const CreateToDo = ({ route }) => {
     return (
         <View style={globalStyles.container}>
             <Formik
-                initialValues={{ name: "", description: "", priority: "" }}
+                initialValues={{ key: uuid.v4(), name: "", description: "", priority: "" }}
                 validationSchema={validationSchema}
                 onSubmit={(values) => {
+                    console.log(values)
                     handler(values)
                 }}
             >

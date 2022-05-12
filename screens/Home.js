@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Modal, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { MaterialIcons } from '@expo/vector-icons'
+import uuid from 'react-native-uuid';
 
 //components
 import TodoItem from '../components/TodoItem';
@@ -11,13 +12,19 @@ const Home = ({ navigation }) => {
     //state
     const [todoList, setTodoList] = useState([
         {
-            name: "test"
+            key: uuid.v4(),
+            name: "Boodschappen",
+            description: "Boodschappen doen voor het weekend"
         },
         {
-            name: "test2"
+            key: uuid.v4(),
+            name: "Afspraak verzetten",
+            description: "Afspraak van woensdag verplaatsen naar volgende week"
         },
         {
-            name: "test3"
+            key: uuid.v4(),
+            name: "Leren voor de tentamens",
+            description: "Leren voor opkomende tentamens"
         }
     ]);
     const [modalOpen, setModalOpen] = useState(false);
